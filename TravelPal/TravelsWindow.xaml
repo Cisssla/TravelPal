@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="TravelsWindow" Height="550" Width="800">
+        Title="TravelsWindow" Height="550" Width="800" Activated="Window_Activated">
     <Grid Background="MintCream">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,12 +27,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label
+        <TextBox
+            x:Name="txtWelcome"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="6"
             Grid.RowSpan="2"
-            Content="  Welcome user 👋"
             Background="MediumSlateBlue"
             Foreground="MintCream"
             FontFamily="Arial"
@@ -126,12 +126,13 @@
             Click="btnDetails_Click"
             />
         <ListView
+            x:Name="lvTravels"
             Grid.Row="4"
             Grid.Column="0"
             Grid.RowSpan="4"
             Grid.ColumnSpan="4"
             Margin="10,0,0,0"
-            Foreground="MediumSlateBlue"/>
+            />
 
 
     </Grid>

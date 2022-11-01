@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         Title="RegisterWindow" Height="450" Width="600">
+
     <Grid Background="MediumSlateBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -13,8 +14,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -28,19 +28,19 @@
 
         <Label 
             Grid.Row="2"
-            Grid.Column="2"
+            Grid.Column="1"
             Content="Username:"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
         <Label 
             Grid.Row="3"
-            Grid.Column="2"
+            Grid.Column="1"
             Content="Password:"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
         <Label 
             Grid.Row="0"
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.ColumnSpan="2"
             Grid.RowSpan="2"
             Content="Register"
@@ -51,37 +51,55 @@
             HorizontalAlignment="Center"/>
         <Label
             Grid.Row="4"
-            Grid.Column="2"
+            Grid.Column="1"
+            Content="Confirm Password:"
+            VerticalAlignment="Center"
+            Foreground="MintCream"
+            />
+        <Label
+            Grid.Row="5"
+            Grid.Column="1"
             Content="Country:"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
         <TextBox
             x:Name="txtUsername"
             Grid.Row="2"
-            Grid.Column="3"
+            Grid.Column="2"
             Height="30"
             VerticalContentAlignment="Center"
-            Foreground="MintCream"/>
-        <TextBox
+            Background="MintCream"/>
+        <PasswordBox
             x:Name="txtPassword"
             Grid.Row="3"
-            Grid.Column="3"
+            Grid.Column="2"
             Height="30"
             VerticalContentAlignment="Center"
-            Foreground="MintCream"/>
-        <ComboBox
+            Background="MintCream"/>
+        <PasswordBox
+            x:Name="txtConfPassword"
             Grid.Row="4"
-            Grid.Column="3"
+            Grid.Column="2"
+            Height="30"
+            VerticalContentAlignment="Center"
+            Background="MintCream"
+            />
+        <ComboBox
+            Grid.Row="5"
+            Grid.Column="2"
             x:Name="cbxCountry"
-            Foreground="MintCream"
-            Height="30"/>
+          Height="30"
+            HorizontalAlignment="Left" 
+            Width="150" 
+            SelectionChanged="cbxCountry_SelectionChanged"
+         
+           />
         <Button
             x:Name="btnRegister"
-            Grid.Row="5"
-            Grid.Column="3"
+            Grid.Row="6"
+            Grid.Column="2"
             Content="Register"
             Height="30"
-            Margin="10 0"
             Foreground="MintCream"
             Click="btnRegister_Click"/>
 

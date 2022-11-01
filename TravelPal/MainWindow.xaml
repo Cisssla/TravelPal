@@ -72,7 +72,7 @@
             VerticalContentAlignment="Center"
             
             />
-        <TextBox
+        <PasswordBox
             x:Name="txtPassword"
             Grid.Row="3"
             Grid.Column="3"

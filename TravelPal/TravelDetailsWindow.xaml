@@ -1,0 +1,111 @@
+﻿<Window x:Class="TravelPal.TravelDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelPal"
+        mc:Ignorable="d"
+        Title="TravelDetailsWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Top"
+            Content="Travel Details"
+            FontSize="30"
+            FontFamily="Arial"/>
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="Destination:"
+            FontSize="20"/>
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Content="Country:"
+            FontSize="20" />
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Content="Travelers:"
+            FontSize="20"/>
+        <Label
+            Grid.Row="6"
+            Grid.Column="0"
+            Content="Travel type:"
+            FontSize="20"/>
+
+        <TextBox
+            x:Name="txtDestination"
+            Grid.Row="3"
+            Grid.Column="1"
+            Height="30"
+            VerticalAlignment="Top"
+            IsEnabled="False"/>
+        <TextBox
+            x:Name="txtCountry"
+            Grid.Row="4"
+            Grid.Column="1"
+            Height="30"
+            VerticalAlignment="Top"
+            IsEnabled="False"/>
+        <TextBox
+            x:Name="txtTravelers"
+            Grid.Row="5"
+            Grid.Column="1"
+            Height="30"
+            VerticalAlignment="Top"
+            IsEnabled="False"/>
+        <TextBox
+            x:Name="txtType"
+            Grid.Row="6"
+            Grid.Column="1"
+            Height="30"
+            VerticalAlignment="Top"
+            IsEnabled="False"/>
+        <CheckBox
+            x:Name="chbAllinclusive"
+            Grid.Row="7"
+            Grid.Column="1"
+            Height="30"
+            VerticalAlignment="Top"
+            Content="All Inclusive"
+            FontSize="20"
+            IsEnabled="False"
+            Visibility="Hidden"/>
+        <Label
+            x:Name="lblWorkOr"
+            Grid.Row="7"
+            Grid.Column="0"
+            Content="Trip type:"
+            FontSize="20"
+            Visibility="Hidden"/>
+        <TextBox
+            x:Name="txtWorkOr"
+            Grid.Column="1"
+            Grid.Row="7"
+            IsEnabled="False"
+            Height="30"
+            VerticalAlignment="Top"
+            Visibility="Hidden"/>
+    </Grid>
+</Window>

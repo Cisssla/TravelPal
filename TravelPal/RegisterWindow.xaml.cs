@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using TravelPal.Enums;
+using TravelPal.InterFaces;
+using TravelPal.Managers;
+using TravelPal.Models;
 
 namespace TravelPal
 {
@@ -19,14 +13,58 @@ namespace TravelPal
     /// </summary>
     public partial class RegisterWindow : Window
     {
-        public RegisterWindow()
+        private UserManager userManager;
+        public RegisterWindow(UserManager userManager)
         {
             InitializeComponent();
+
+            cbxCountry.ItemsSource = Enum.GetValues(typeof(Countries));
+
+            this.userManager = userManager;
+
+
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+           
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+            Countries location = (Countries)cbxCountry.SelectedItem;
 
+            User user = new(username, password, location);
+
+            if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Password) && !string.IsNullOrEmpty(txtConfPassword.Password) && cbxCountry != null)
+            {
+                if (txtPassword.Password == txtConfPassword.Password)
+                {
+                    if (this.userManager.AddUser(user))
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username is already taken, try again", "Warning");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Password don't match, try again!", "Warning");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled!", "Warning");
+            }
+
+
+
+        }
+
+        private void cbxCountry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
         }
     }
 }
