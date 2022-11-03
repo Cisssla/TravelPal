@@ -18,6 +18,8 @@ namespace TravelPal
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
 
         //logga in för att komma till travelwindow

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using TravelPal.InterFaces;
 using TravelPal.Models;
 
 namespace TravelPal.Managers;
@@ -13,6 +15,23 @@ public class TravelManager
     {
         this.userManager = userManager;
         this.signedInUser = userManager.SignedInUser as User;
+
+        PopulateTravelsList();
+    }
+
+    private void PopulateTravelsList()
+    {
+        foreach (IUser user in userManager.users)
+        {
+            if (user.Username == "Gandalf")
+            {
+                User gandalf = user as User;
+                foreach (Travel travel in gandalf.travels)
+                {
+                    travels.Add(travel);
+                }
+            }
+        }
     }
 
     //lägg till en resa

@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="TravelsWindow" Height="550" Width="800" Activated="Window_Activated">
+        Title="TravelsWindow" Height="550" Width="800" 
+        Activated="Window_Activated"
+     >
+
     <Grid Background="MintCream">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -13,7 +16,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -48,7 +51,7 @@
             VerticalContentAlignment="Bottom"
             HorizontalContentAlignment="Center"
             Foreground="MediumSlateBlue"/>
-        
+
         <Button
             Grid.Column="4"
             Grid.Row="0"
@@ -136,4 +139,5 @@
 
 
     </Grid>
+    
 </Window>

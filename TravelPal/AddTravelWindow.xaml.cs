@@ -65,7 +65,7 @@ namespace TravelPal
             {
 
                 travelManager.AddTravel(travel);
-                MessageBox.Show("Add");
+                MessageBox.Show("Your travel has been added to your list", "Travel added", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close();
             }
             else

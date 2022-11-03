@@ -20,7 +20,7 @@ public class UserManager
     }
 
     //skapa admin och user
-    private void ValidatedUser()
+    public void ValidatedUser()
     {
         Admin admin = new("admin", "password", Countries.Aruba);
         users.Add(admin);
@@ -28,7 +28,7 @@ public class UserManager
         User cissi = new("Cissi", "hej", Countries.Bahamas);
         users.Add(cissi);
 
-        User gandalf = new("Gandalf", "password", Countries.Bahamas);
+        User gandalf = new("Gandalf", "password", Countries.Bermuda);
         users.Add(gandalf);
         Vacation vacation1 = new(true,"Santiago", Countries.Chile,"3");
         gandalf.travels.Add(vacation1);
@@ -54,10 +54,18 @@ public class UserManager
         //ta bort användare från listan
         users.Remove(userToRemove);
     }
-     public bool UpdateUsername(IUser userToUpdate)
+     public bool UpdateUsername(IUser userToUpdate, string username)
     {
         //uppdatera användare
-        return true;
+        if (ValidateUsername(username))
+        {
+            userToUpdate.Username = username;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     private bool ValidateUsername(string username)
     {
@@ -72,6 +80,10 @@ public class UserManager
         }
         return true;
 
+    }
+    public void UpdatePassword(IUser userToUpdate, string password)
+    {
+        userToUpdate.Password = password;
     }
     //logga in användaren
     public bool SignInUser(string username, string password)

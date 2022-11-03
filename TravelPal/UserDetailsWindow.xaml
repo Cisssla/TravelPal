@@ -3,10 +3,155 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="UserDetailsWindow" Height="450" Width="800">
-    <Grid>
+        Title="UserDetailsWindow" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border
+        CornerRadius="50"
+        BorderThickness="5"
+        Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0"  EndPoint="1,1">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+                <GradientStop Color="SlateBlue" Offset="0.0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
         
-    </Grid>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                <GradientStop Color="MediumSlateBlue" Offset="0"/>
+                <GradientStop Color="MintCream" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="6"
+            VerticalAlignment="Bottom"
+            Margin="0,0,0,10">
+                
+                <Label
+                Content="User Details"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                FontFamily="Arial"
+                FontSize="35"
+                Margin="0,0,0,10"
+                Foreground="MintCream"
+                FontWeight="SemiBold"/>
+                
+                <Label
+                Content="Change username:"
+                HorizontalContentAlignment="Center"/>
+                <TextBox
+                x:Name="txtNewUsername"
+                Width="120"
+                Height="25"
+                HorizontalAlignment="Center"
+                Background="MintCream"
+                    />
+                <Label
+                Content="Choose new country:"
+                HorizontalContentAlignment="Center"/>
+                <ComboBox
+                x:Name="cbxNewCountry"
+                Width="120"
+                Height="25"
+                HorizontalAlignment="Center" 
+                SelectionChanged="ComboBox_SelectionChanged"
+                    Background="MintCream"/>
+                <Label
+                Content="New password:"
+                HorizontalContentAlignment="Center"/>
+                <PasswordBox
+                x:Name="txtNewPassword"
+                Width="120"
+                Height="25"
+                HorizontalAlignment="Center"
+                    Background="MintCream"/>
+                <Label
+                Content="Confirm new password:"
+                HorizontalContentAlignment="Center"/>
+                <PasswordBox
+                x:Name="txtConfNewPassword"
+                Width="120"
+                Height="25"
+                HorizontalAlignment="Center"
+                    Background="MintCream"/>
+
+            </StackPanel>
+            <Button
+            x:Name="btnSave"
+            Grid.Row="6"
+            Grid.Column="2"
+            Grid.RowSpan="2"
+            Content="Save"
+            Height="25"
+            Width="70"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+             Background="MintCream"
+                Foreground="SlateBlue"
+                BorderBrush="MediumSlateBlue"
+                BorderThickness="3"
+            Click="btnSave_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+
+            <Button
+            x:Name="btnCancel"
+            Grid.Row="6"
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Content="Cancel"
+            Height="25"
+            Width="70"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Margin="0,0,2,0" 
+                Background="MediumSlateBlue"
+                Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="3"
+            Click="btnCancel_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Border>
 </Window>

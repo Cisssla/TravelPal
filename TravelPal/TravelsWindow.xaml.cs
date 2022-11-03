@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using TravelPal.Enums;
 using TravelPal.InterFaces;
 using TravelPal.Managers;
 using TravelPal.Models;
@@ -20,6 +21,10 @@ namespace TravelPal
         private User signedInUser;
         private bool isUserAdmin;
         private TravelManager travelManager;
+        public string newUsername;
+        public string newPassword;
+        Countries newLocation;
+
         
         
 
@@ -29,7 +34,7 @@ namespace TravelPal
 
             this.userManager = userManager;
 
-            txtWelcome.Text = $"Welcome {userManager.SignedInUser.Username}👋";
+            WelcomeMessage();
 
             signedInUser = userManager.SignedInUser as User;
 
@@ -38,6 +43,22 @@ namespace TravelPal
 
             UpdateTravelList();
 
+            if (isUserAdmin)
+            {
+                btnAdd.IsEnabled = false;
+                btnDetails.IsEnabled = false;
+                btnInfo.IsEnabled = false;
+                btnUser.IsEnabled = false;
+                
+            }
+
+            
+
+        }
+
+        public void WelcomeMessage()
+        {
+            txtWelcome.Text = $"Welcome {userManager.SignedInUser.Username}👋";
         }
 
         private void btnSignOut_Click(object sender, RoutedEventArgs e)
@@ -50,9 +71,11 @@ namespace TravelPal
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserDetailsWindow userDetailsWindow = new();
-
+            
+            UserDetailsWindow userDetailsWindow = new(userManager, travelManager, this);
             userDetailsWindow.Show();
+            
+
         }
 
         private void btnInfo_Click(object sender, RoutedEventArgs e)
