@@ -41,6 +41,8 @@ namespace TravelPal
             this.isUserAdmin = isUserAdmin;
             this.travelManager = travelManager;
 
+            txtWelcome.IsEnabled = false;
+
             UpdateTravelList();
 
             if (isUserAdmin)
@@ -49,6 +51,7 @@ namespace TravelPal
                 btnDetails.IsEnabled = false;
                 btnInfo.IsEnabled = false;
                 btnUser.IsEnabled = false;
+                
                 
             }
 

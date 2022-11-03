@@ -7,42 +7,83 @@
         mc:Ignorable="d"
         Title="TravelsWindow" Height="550" Width="800" 
         Activated="Window_Activated"
-     >
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border
+        CornerRadius="50"
+        BorderThickness="5"
+        Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0"  EndPoint="1,1">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+                <GradientStop Color="SlateBlue" Offset="0.0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-    <Grid Background="MintCream">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
 
-        <TextBox
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox
             x:Name="txtWelcome"
             Grid.Row="0"
             Grid.Column="0"
-            Grid.ColumnSpan="6"
+            Grid.ColumnSpan="4"
             Grid.RowSpan="2"
-            Background="MediumSlateBlue"
+            
             Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="10"
             FontFamily="Arial"
+                FontWeight="Light"
             FontSize="50"
             VerticalContentAlignment="Center"
-            />
-        <Label
+                Margin="10,10,0,0"
+            >
+                <TextBox.Resources>
+                   
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                        <GradientStop Color="MediumSlateBlue" Offset="0"/>
+                        <GradientStop Color="MintCream" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+
+
+            <Label
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -50,22 +91,30 @@
             FontSize="30"
             VerticalContentAlignment="Bottom"
             HorizontalContentAlignment="Center"
-            Foreground="MediumSlateBlue"/>
+            Foreground="SlateBlue"/>
 
-        <Button
+
+            <Button
             Grid.Column="4"
             Grid.Row="0"
             x:Name="btnSignOut"
             Content="Sign Out"
             Foreground="MediumSlateBlue"
             Background="MintCream"
+            BorderBrush="SlateBlue"
+                BorderThickness="2"
             Height="35"
             Width="100"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Right"
-            Click="btnSignOut_Click"
-            />
-        <Button
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Click="btnSignOut_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button
             Grid.Row="2"
             Grid.Column="0"
             Height="40"
@@ -75,9 +124,17 @@
             Content="User"
             Background="MediumSlateBlue"
             Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="5"
             FontSize="20"
-            Click="btnUser_Click"/>
-        <Button
+            Click="btnUser_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button
             Grid.Row="2"
             Grid.Column="1"
             Height="40"
@@ -87,57 +144,109 @@
             Content="Info"
             Background="MediumSlateBlue"
             Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="5"
             FontSize="20"
-            Click="btnInfo_Click"/>
-        <Button
+            Click="btnInfo_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button
             Grid.Row="4"
             Grid.Column="4"
             Height="40"
             VerticalAlignment="Bottom"
             x:Name="btnAdd"
-            Margin="10,0,0,0"
+            Margin="10,0,5,0"
             Content="Add"
             Background="MediumSlateBlue"
             Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="5"
             FontSize="20"
             Click="btnAdd_Click"
-            />
-        <Button
+            >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button
             Grid.Row="6"
             Grid.Column="4"
             Height="40"
             VerticalAlignment="Bottom"
             x:Name="btnRemove"
-            Margin="10,0,0,0"
+            Margin="10,0,5,0"
             Content="Remove"
             Background="MediumSlateBlue"
             Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="5"
             FontSize="20"
             Click="btnRemove_Click"
-            />
-        <Button
+            >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button
             Grid.Row="5"
             Grid.Column="4"
             Height="40"
             VerticalAlignment="Bottom"
             x:Name="btnDetails"
-            Margin="10,0,0,0"
+            Margin="10,0,5,0"
             Content="Details"
+                
             Background="MediumSlateBlue"
             Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="5"
             FontSize="20"
             Click="btnDetails_Click"
-            />
-        <ListView
+            >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <ListView
             x:Name="lvTravels"
             Grid.Row="4"
             Grid.Column="0"
             Grid.RowSpan="4"
             Grid.ColumnSpan="4"
             Margin="10,0,0,0"
-            />
+                FontSize="25"
+                Foreground="MintCream"
+                BorderBrush="SlateBlue"
+                BorderThickness="8"
+            >
+                <ListView.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+               
+                </ListView.Resources>
+                <ListView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                        <GradientStop Color="MintCream" Offset="1"/>
+                        <GradientStop Color="MediumSlateBlue" Offset="0"/>
+                        
+                    </LinearGradientBrush>
+                </ListView.Background>
+            </ListView>
 
 
-    </Grid>
-    
+        </Grid>
+    </Border>
+
 </Window>
