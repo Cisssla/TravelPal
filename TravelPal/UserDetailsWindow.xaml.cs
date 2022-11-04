@@ -40,6 +40,7 @@ namespace TravelPal
 
         }
 
+        //stänger userdetailswindow
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -54,6 +55,7 @@ namespace TravelPal
             cbxNewCountry.IsReadOnly = true;
         }
 
+        //sparar ny användarinformation av user
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             string username = txtNewUsername.Text;
@@ -83,13 +85,14 @@ namespace TravelPal
         }
 
 
-
+        //uppdaterar användarens nuvarande land
         private void UpdateNewLocation(Countries location)
         {
             userManager.SignedInUser.Location = location;
 
         }
 
+        //uppdaterar användarens nya lösenord
         private void UpdateNewPassword(string password, string confirmPassword)
         {
             if (!string.IsNullOrEmpty(password) || !string.IsNullOrEmpty(confirmPassword))
@@ -114,6 +117,8 @@ namespace TravelPal
             }
 
         }
+
+        //kollar så password är minst 5 tecken långt, annars kommer ett varningsmeddelande
         private bool ValidatePasswordLength(string password)
         {
             if (password.Length >= 5)
@@ -128,6 +133,7 @@ namespace TravelPal
             }
         }
 
+        //uppdaterar användarens username
         private void UpdateNewUsername(string username)
         {
             if (username != userManager.SignedInUser.Username)
@@ -150,6 +156,7 @@ namespace TravelPal
             }
         }
 
+        //kollar så att användarnamnet är minst 3 tecken långt, annars kommer varningsmeddelande
         private bool ValidateUsernameLength(string username)
         {
             if (username.Length >= 3)

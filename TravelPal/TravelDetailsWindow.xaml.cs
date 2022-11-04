@@ -28,6 +28,8 @@ namespace TravelPal
 
             this.selectedTravel = new();
 
+            //möjlighet att se detaljer av resor från sin lista
+
             txtDestination.Text = selectedTravel.Destination;
             txtCountry.Text = selectedTravel.Country.ToString();
             txtTravelers.Text = selectedTravel.Travelers.ToString();

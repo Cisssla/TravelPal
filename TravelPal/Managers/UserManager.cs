@@ -81,6 +81,7 @@ public class UserManager
         return true;
 
     }
+    //uppdatera användarens lösenord
     public void UpdatePassword(IUser userToUpdate, string password)
     {
         userToUpdate.Password = password;

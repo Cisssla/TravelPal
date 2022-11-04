@@ -6,26 +6,44 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         Title="TravelDetailsWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Border
+        
+        BorderThickness="5"
+        Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0"  EndPoint="1,1">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+                <GradientStop Color="SlateBlue" Offset="0.0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-        <Label
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,3">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -33,56 +51,56 @@
             Content="Travel Details"
             FontSize="30"
             FontFamily="Arial"/>
-        <Label
+            <Label
             Grid.Row="3"
             Grid.Column="0"
             Content="Destination:"
             FontSize="20"/>
-        <Label
+            <Label
             Grid.Row="4"
             Grid.Column="0"
             Content="Country:"
             FontSize="20" />
-        <Label
+            <Label
             Grid.Row="5"
             Grid.Column="0"
             Content="Travelers:"
             FontSize="20"/>
-        <Label
+            <Label
             Grid.Row="6"
             Grid.Column="0"
             Content="Travel type:"
             FontSize="20"/>
 
-        <TextBox
+            <TextBox
             x:Name="txtDestination"
             Grid.Row="3"
             Grid.Column="1"
             Height="30"
             VerticalAlignment="Top"
             IsEnabled="False"/>
-        <TextBox
+            <TextBox
             x:Name="txtCountry"
             Grid.Row="4"
             Grid.Column="1"
             Height="30"
             VerticalAlignment="Top"
             IsEnabled="False"/>
-        <TextBox
+            <TextBox
             x:Name="txtTravelers"
             Grid.Row="5"
             Grid.Column="1"
             Height="30"
             VerticalAlignment="Top"
             IsEnabled="False"/>
-        <TextBox
+            <TextBox
             x:Name="txtType"
             Grid.Row="6"
             Grid.Column="1"
             Height="30"
             VerticalAlignment="Top"
             IsEnabled="False"/>
-        <CheckBox
+            <CheckBox
             x:Name="chbAllinclusive"
             Grid.Row="7"
             Grid.Column="1"
@@ -92,14 +110,14 @@
             FontSize="20"
             IsEnabled="False"
             Visibility="Hidden"/>
-        <Label
+            <Label
             x:Name="lblWorkOr"
             Grid.Row="7"
             Grid.Column="0"
             Content="Trip type:"
             FontSize="20"
             Visibility="Hidden"/>
-        <TextBox
+            <TextBox
             x:Name="txtWorkOr"
             Grid.Column="1"
             Grid.Row="7"
@@ -107,5 +125,6 @@
             Height="30"
             VerticalAlignment="Top"
             Visibility="Hidden"/>
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

@@ -45,6 +45,7 @@ namespace TravelPal
 
             UpdateTravelList();
 
+            //iloggad admin ska bara kunna se resor i listan och ta bort resor från listan, inga detaljer
             if (isUserAdmin)
             {
                 btnAdd.IsEnabled = false;
@@ -59,11 +60,13 @@ namespace TravelPal
 
         }
 
+        //välkomstmeddelande som skriver ut användarens usernamn
         public void WelcomeMessage()
         {
             txtWelcome.Text = $"Welcome {userManager.SignedInUser.Username}👋";
         }
 
+        //loggar ut och tar dig tillbacka till mainwindow
         private void btnSignOut_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new();
@@ -72,6 +75,7 @@ namespace TravelPal
 
         }
 
+        //öppnar userdetailswindow
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
             
@@ -81,17 +85,20 @@ namespace TravelPal
 
         }
 
+        //visar info om travelpal
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("With TravelPal you travel safely and comfortably to wonderful destinations all over the world. With us can you choose from a wide range of trips, from all inclusive vacations to work trips, a get away weekend and much more. Find bargains among our last minute trips or book your next trip well in advance to get that room with its own pool at your favorite hotel. You can also choose to tailor your dream trip by packaging your trip yourself", "Travel With TravelPal", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        //skickar en till addtravelwindow
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             AddTravelWindow addTravelWindow = new(userManager, travelManager);
             addTravelWindow.ShowDialog();
         }
 
+        //tar bort den resa från listan som är markerad, om ingen resa är markerad så kommer ett varningsmeddelande upp
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
             //tar bort markerad resa från listan
@@ -115,6 +122,7 @@ namespace TravelPal
         }
 
 
+        //visar detaljer för markerad resa i listan, om ingen resa är vald så kommer ett varningsmeddelande upp
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
             // visar detaljer av markerad resa
@@ -135,6 +143,7 @@ namespace TravelPal
 
         }
 
+        //uppdaterar listan med resor efter att något har lagts till eller tagits bort
         private void UpdateTravelList()
         {
             if (!isUserAdmin)
@@ -161,6 +170,7 @@ namespace TravelPal
 
         }
 
+        //uppdaterar travelswindow så nytt username eller nya resor ska visas
         private void Window_Activated(object sender, EventArgs e)
         {
             lvTravels.Items.Clear();

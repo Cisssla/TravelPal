@@ -25,6 +25,7 @@ namespace TravelPal
 
         }
 
+        // användaren kan skapa ett konto, kollar så att inte användarnamnet är upptaget, kollar så att password matchar med confirmpassword, alla fields måste vara ifyllda
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
            
@@ -62,6 +63,7 @@ namespace TravelPal
 
         }
 
+        //combobox med länder
         private void cbxCountry_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            

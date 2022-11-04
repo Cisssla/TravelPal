@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using TravelPal.Enums;
@@ -28,7 +29,7 @@ namespace TravelPal
 
         }
 
-
+        //frågar användaren om resan är trip eller vacation, om användaren väljer trip kommer en combobox fram med valen work or leasure, ifall användaren väljer vacation kommer en checkbox fram så man kan välja all inclusive
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             if (cbxTripOrVacation.SelectedItem.ToString() == TripOrVacation.Vacation.ToString())
@@ -45,6 +46,7 @@ namespace TravelPal
             }
         }
 
+        //användaren kan lägga till resor i sin egna lista
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             string destination = txtDestination.Text;
@@ -74,9 +76,17 @@ namespace TravelPal
             }
         }
 
+        //combobox för triptype
         private void cbxTripType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        //gör så det inte går att lägga in något annat än siffror i travelers
+        private void txtTravelers_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

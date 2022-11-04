@@ -5,31 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="AddTravelWindow" Background="MintCream" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        Title="AddTravelWindow" Height="450" Width="800">
+    <Border
+        
+        BorderThickness="5"
+        Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0"  EndPoint="1,1">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+                <GradientStop Color="SlateBlue" Offset="0.0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-        <Label
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
@@ -39,66 +57,70 @@
             FontSize="35"
             FontFamily="Arial"
             Foreground="MediumSlateBlue"/>
-        <Label
+            <Label
             Grid.Row="3"
             Grid.Column="1"
             Content="Destination:"
             FontSize="20"/>
-        <Label
+            <Label
             Grid.Row="3"
             Grid.Column="2"
             Content="Country:"
             FontSize="20"/>
-        <Label
+            <Label
             Grid.Row="5"
             Grid.Column="1"
             Content="Travelers:"
             FontSize="20"/>
-        <Label
+            <Label
             Grid.Row="5"
             Grid.Column="2"
             Content="Trip or Vacation:"
             FontSize="20"/>
-        <Label
+            <Label
             x:Name="lblTripType"
             Grid.Row="7"
             Grid.Column="2"
             Content="Trip Type:"
             FontSize="20"
             Visibility="Hidden"/>
-        <TextBox
+            <TextBox
             x:Name="txtDestination"
             Grid.Row="4"
             Grid.Column="1"
             Margin="5,0,0,0"
             />
-        <TextBox
+            <TextBox
             x:Name="txtTravelers"
+                PreviewTextInput="txtTravelers_PreviewTextInput"
             Grid.Row="6"
             Grid.Column="1"
             Margin="5,0,0,0"
             />
-        <ComboBox
+            <ComboBox
             x:Name="cbxCountry"
             Grid.Row="4"
             Grid.Column="2"
             Margin="5,0,0,0" 
-            FontSize="20"/>
-        <ComboBox
+            FontSize="15"
+                Background="MintCream"/>
+            <ComboBox
             x:Name="cbxTripOrVacation"
             Grid.Row="6"
             Grid.Column="2"
             Margin="5,0,0,0" 
             SelectionChanged="ComboBox_SelectionChanged_1"
-            FontSize="20"/>
-        <ComboBox
+            FontSize="15"
+                Background="MintCream"/>
+            <ComboBox
             x:Name="cbxTripType"
             Grid.Row="8"
             Grid.Column="2"
             Margin="5,0,0,0" 
-            FontSize="20"
-            Visibility="Hidden"/>
-        <CheckBox
+            FontSize="15"
+            Visibility="Hidden"
+                Background="MintCream"/>
+            <CheckBox
             x:Name="chbAllInclusive"
             Grid.Column="1"
             Grid.Row="8"
@@ -107,7 +129,7 @@
             Margin="5,5,0,0"
             Visibility="Hidden"
             />
-        <Button
+            <Button
             x:Name="addButton"
             Grid.Column="2"
             Grid.Row="10"
@@ -117,7 +139,16 @@
             FontSize="25"
             Background="MediumSlateBlue"
             Foreground="MintCream" 
-            Click="addButton_Click"/>
+                BorderBrush="SlateBlue"
+                BorderThickness="4"
+            Click="addButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
 
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

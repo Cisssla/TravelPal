@@ -49,7 +49,7 @@ namespace TravelPal
             }
 
         }
-
+        //skickar användaren till registerwindow
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow registerWindow = new(userManager);

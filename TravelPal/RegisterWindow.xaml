@@ -5,40 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="600">
+        Title="RegisterWindow" Height="450" Width="600"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border
+        CornerRadius="50"
+        BorderThickness="5"
+        Opacity="0.95">
+        
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0"  EndPoint="1,1">
+                <GradientStop Color="MintCream" Offset="0"/>
+                <GradientStop Color="MediumSlateBlue" Offset="0.75"/>
+                <GradientStop Color="SlateBlue" Offset="0.0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-    <Grid Background="MediumSlateBlue">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,3">
+                <GradientStop Color="MediumSlateBlue" Offset="0"/>
+                <GradientStop Color="MintCream" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Label 
+            <Label 
             Grid.Row="2"
             Grid.Column="1"
             Content="Username:"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
-        <Label 
+            <Label 
             Grid.Row="3"
             Grid.Column="1"
             Content="Password:"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
-        <Label 
+            <Label 
             Grid.Row="0"
             Grid.Column="1"
             Grid.ColumnSpan="2"
@@ -49,34 +71,34 @@
             FontFamily="Arial"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>
-        <Label
+            <Label
             Grid.Row="4"
             Grid.Column="1"
             Content="Confirm Password:"
             VerticalAlignment="Center"
             Foreground="MintCream"
             />
-        <Label
+            <Label
             Grid.Row="5"
             Grid.Column="1"
             Content="Country:"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
-        <TextBox
+            <TextBox
             x:Name="txtUsername"
             Grid.Row="2"
             Grid.Column="2"
             Height="30"
             VerticalContentAlignment="Center"
             Background="MintCream"/>
-        <PasswordBox
+            <PasswordBox
             x:Name="txtPassword"
             Grid.Row="3"
             Grid.Column="2"
             Height="30"
             VerticalContentAlignment="Center"
             Background="MintCream"/>
-        <PasswordBox
+            <PasswordBox
             x:Name="txtConfPassword"
             Grid.Row="4"
             Grid.Column="2"
@@ -84,7 +106,7 @@
             VerticalContentAlignment="Center"
             Background="MintCream"
             />
-        <ComboBox
+            <ComboBox
             Grid.Row="5"
             Grid.Column="2"
             x:Name="cbxCountry"
@@ -94,14 +116,24 @@
             SelectionChanged="cbxCountry_SelectionChanged"
          
            />
-        <Button
+            <Button
             x:Name="btnRegister"
             Grid.Row="6"
             Grid.Column="2"
             Content="Register"
             Height="30"
             Foreground="MintCream"
-            Click="btnRegister_Click"/>
+                Background="MediumSlateBlue"
+                BorderBrush="SlateBlue"
+                BorderThickness="3"
+            Click="btnRegister_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
 
-    </Grid>
+        </Grid>
+    </Border>
 </Window>
