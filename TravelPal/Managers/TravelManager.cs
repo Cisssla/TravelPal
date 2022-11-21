@@ -45,7 +45,6 @@ public class TravelManager
     //ta bort en resa
     public void RemoveTravel(Travel travel)
     {
-        Travel selectedTravel = new();
-        travels.Remove(selectedTravel);
+        travels.Remove(travel);
     }
 }

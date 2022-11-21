@@ -110,14 +110,15 @@ namespace TravelPal
             {
                 Travel selectedTravel = selectedItem.Tag as Travel;
                 travelManager.RemoveTravel(selectedTravel);
-                lvTravels.Items.Remove(lvTravels.SelectedItem);
+                lvTravels.Items.Remove(lvTravels.SelectedItem);  
+
+                //buggfixen
+                signedInUser.travels.Remove(selectedTravel);
             }
             else
             {
                 MessageBox.Show("You have to selecte a travel from your list, Try again!", "Warning");
             }
-
-
 
         }
 
